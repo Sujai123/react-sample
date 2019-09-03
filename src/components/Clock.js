@@ -1,4 +1,5 @@
 import React from 'react'
+import { stat } from 'fs';
 
 class Clock extends React.Component {
     constructor(props) {
@@ -15,12 +16,12 @@ class Clock extends React.Component {
         );
     }
 
-    componentDidUpdate(prevProps, prevstate, snapshot) {
-        console.log(prevstate.date)
+    componentDidUpdate(prevProps, prevstate) {
+        console.log(prevstate.date,this.state.date)
         if(this.state.date !== prevstate.date){
             console.log('this.componentDidUpdate')
-            clearInterval(this.timerID)
-            this.setState({})
+            // clearInterval(this.timerID)
+            // this.setState({})
         }
     }
 
@@ -32,9 +33,9 @@ class Clock extends React.Component {
 
     tick=()=> {
     let temp = this.state.date
-    this.setState({
-        date: temp+1
-    });
+    this.setState((state)=>({
+        date: state.date+1
+    }));
     }
 
     render() {

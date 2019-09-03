@@ -7,7 +7,17 @@ import Clock from './components/Clock'
 import HandlingEvents from './components/HandlingEvents'
 import DragnDrop from './components/DragnDrop'
 import Form from './components/Form'
+import Hooks from './Hooks/Hooks'
 import './App.css';
+import UseReducerExample from './Hooks/UseReducerExample'
+import UseContextExample from './Hooks/useContextExample'
+import UseRef from './Hooks/UseRef'
+import UseMemo from './Hooks/UseMemo'
+import UseCallback from './CallBack/UseCallBack'
+import HookTimer from './Hooks/HookTimer'
+import CustomHookApp from './CustomHook/CustomHookApp'
+
+import * as Math from './components/Math'
 
 class App extends React.Component {
   constructor(){
@@ -33,11 +43,11 @@ class App extends React.Component {
   render(){
     let msg=null
     if(this.state.isStock){
-      msg=<div><Clock /></div>
+      msg=<div><Hooks /></div>
     }
     return (
       <div style={{'padding':'20px'}}>
-        <SearchBar 
+        {/* <SearchBar 
         text={this.state.filterText} 
         isStock={this.state.isStock}
         textBoxHandler={this.textBoxHandler}
@@ -45,16 +55,27 @@ class App extends React.Component {
         <ProductTable 
         products={Products}
         text={this.state.filterText} 
-        isStock={this.state.isStock} />
+        isStock={this.state.isStock} />  */}
 
         {/* <Time /> */}
 
-        {/* {msg} */}
+         {/* {msg} */}
 
 
         {/* <HandlingEvents />
         <DragnDrop /> */}
-        <Form />
+        {/* <Form /> */}
+        
+        {/* <Hooks /> */}
+
+        {/* {console.log(Math.sum(100,2),Math.PI)} */}
+        {/* <UseReducerExample /> */}
+        {/* <UseContextExample /> */}
+        {/* <UseRef />
+        <UseMemo /> */}
+        {/* <UseCallback /> */}
+        {/* <HookTimer /> */}
+        <CustomHookApp />
       </div>
     );
   }
