@@ -74,7 +74,7 @@ class App extends React.Component {
         {/* <UseRef />
         <UseMemo /> */}
         {/* <UseCallback /> */}
-        {/* <HookTimer /> */}
+        <HookTimer />
         <CustomHookApp />
       </div>
     );
